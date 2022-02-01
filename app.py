@@ -52,7 +52,7 @@ def UI():
     _, a, _ = st.columns((1,10, 1))
     a.markdown("<p style='text-align: left; color: black; font-size: 25px;'>A website where you can find all fashion styles in world with only a picture</p>", unsafe_allow_html=True)
     
-    img_file_buffer = a.file_uploader("Upload an image", type=[ "jpg", "jpeg",'png'])
+    img_file_buffer = a.file_uploader("Upload an image", type=[ "jpg", "jpeg",'png','abs'])
     if img_file_buffer is not None:
         img = np.array(Image.open(img_file_buffer))
         img_draw, list_clothes = predict_od(model_od, img, class_names_detection)
